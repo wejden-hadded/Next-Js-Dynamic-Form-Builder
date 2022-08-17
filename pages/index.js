@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import FormsList from "../components/FormBuilder/FormsList";
 import Navbar from "../components/Layout/Navbar";
 import styles from "../styles/Home.module.css";
 
@@ -13,6 +14,7 @@ export default function Home() {
       </Head>
 
       <Navbar />
+      <FormsList />
     </div>
   );
 }

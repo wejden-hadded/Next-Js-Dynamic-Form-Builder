@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Transition } from "@headlessui/react";
-import { Link } from "react-scroll";
+import Link from "next/link";
 import { SearchIcon } from "@heroicons/react/outline";
 
 function Navbar() {
@@ -17,7 +17,7 @@ function Navbar() {
                 </h1>
               </div>
               <div className="relative flex items-center text-gray-400 focus-within:text-gray-600">
-                <SearchIcon class="w-5 h-5 absolute ml-3 pointer-events-none" />
+                <SearchIcon className="w-5 h-5 absolute ml-3 pointer-events-none" />
                 <input
                   type="text"
                   name="search"
@@ -30,28 +30,16 @@ function Navbar() {
 
               <div className="hidden md:block">
                 <div className="ml-10 flex items-baseline space-x-4">
-                  <Link
-                    href="/"
-                    activeClass="Home"
-                    to="home"
-                    smooth={true}
-                    offset={50}
-                    duration={500}
-                    className="cursor-pointer text-blue-500 font-semibold px-3 py-2 text-md hover:font-black"
-                  >
-                    Home
+                  <Link href="/">
+                    <a className="cursor-pointer text-blue-500 font-semibold px-3 py-2 text-md hover:font-black">
+                      Home
+                    </a>
                   </Link>
 
-                  <Link
-                    href="/newForm"
-                    activeClass="NewForm"
-                    to="newForm"
-                    smooth={true}
-                    offset={50}
-                    duration={500}
-                    className="cursor-pointer hover:bg-blue-500 text-black hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                  >
-                    Add New Form
+                  <Link href="/formBuilder">
+                    <a className="cursor-pointer hover:bg-blue-500 text-black hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                      Add New Form
+                    </a>
                   </Link>
                 </div>
               </div>
@@ -117,27 +105,15 @@ function Navbar() {
                 ref={ref}
                 className="bg-white px-2 pt-2 pb-3 space-y-1 sm:px-3"
               >
-                <Link
-                  href="/"
-                  activeClass="home"
-                  to="home"
-                  smooth={true}
-                  offset={50}
-                  duration={500}
-                  className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                >
-                  Home
+                <Link href="/">
+                  <a className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    Home
+                  </a>
                 </Link>
-                <Link
-                  href="/newForm"
-                  activeClass="newForm"
-                  to="about"
-                  smooth={true}
-                  offset={50}
-                  duration={500}
-                  className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                >
-                  About
+                <Link href="/newForm">
+                  <a className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    Add New Form
+                  </a>
                 </Link>
               </div>
             </div>
