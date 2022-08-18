@@ -3,8 +3,10 @@ import { Transition } from "@headlessui/react";
 import Link from "next/link";
 import { SearchIcon } from "@heroicons/react/outline";
 
-function Navbar() {
+function Navbar(props) {
   const [isOpen, setIsOpen] = useState(false);
+  const [newValue, setNewValue] = useState(null);
+
   return (
     <div>
       <nav className=" shadow-sm absolute w-full z-10">
@@ -15,17 +17,6 @@ function Navbar() {
                 <h1 className=" font-bold text-xl cursor-pointer">
                   Form<span className="text-blue-500">Builder</span>
                 </h1>
-              </div>
-              <div className="relative flex items-center text-gray-400 focus-within:text-gray-600">
-                <SearchIcon className="w-5 h-5 absolute ml-3 pointer-events-none" />
-                <input
-                  type="text"
-                  name="search"
-                  placeholder="Search..."
-                  autoComplete="off"
-                  aria-label="Search "
-                  className="w-full pr-3 pl-10 py-2 font-semibold placeholder-gray-500 text-black rounded-2xl border-none ring-2 ring-gray-300 focus:ring-blue-300 focus:ring-2"
-                />
               </div>
 
               <div className="hidden md:block">
